@@ -1,0 +1,15 @@
+.comments {
+	margin: 3rem auto;
+	width: 90%;
+	max-width: 40rem;
+	text-align: center;
+}
+
+.comments button {
+	font: inherit;
+	padding: 0.5rem 1rem;
+}
+
+.comments button:first-child {
+	margin-bottom: 2rem;
+}

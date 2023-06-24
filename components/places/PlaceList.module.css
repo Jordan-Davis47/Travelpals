@@ -1,0 +1,19 @@
+.header {
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	top: 30px;
+	font-size: 2rem;
+	font-weight: 500;
+	background-color: #202020b9;
+	color: #94fdfd;
+	width: fit-content;
+	padding: 2%;
+	border-radius: 8px;
+}
+
+.list {
+	width: 90%;
+	max-width: 40rem;
+	margin: 5rem auto;
+}

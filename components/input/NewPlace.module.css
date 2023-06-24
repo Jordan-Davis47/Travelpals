@@ -1,0 +1,114 @@
+.createPlace {
+	width: 80vw;
+	height: 95vh;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.createPlace h2 {
+	color: black;
+}
+
+.createPlace form {
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 1px 12px 2px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	overflow: hidden;
+	background-color: white;
+	display: flex;
+	flex-direction: column-reverse;
+	gap: 1rem;
+	padding: 1rem;
+}
+
+.inputControl {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 1rem;
+}
+
+.inputControl button {
+	margin-top: 2%;
+	font-size: 1rem;
+}
+
+.control {
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+	margin-bottom: 0.5rem;
+}
+
+.control label {
+	text-align: center;
+	font-weight: bold;
+	font-size: 1rem;
+	margin-bottom: 0.5rem;
+}
+
+.imgSection {
+	position: relative;
+	height: 25vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.buttonContainer {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.cancel {
+	background-color: rgb(210, 12, 12);
+}
+
+.cancel:hover {
+	background-color: rgb(190, 12, 12);
+}
+
+@media (min-width: 768px) {
+	.createPlace form {
+		flex-direction: row-reverse;
+		width: 85vw;
+		max-width: 650px;
+		max-height: 400px;
+		align-items: center;
+		/* gap: 20%; */
+		height: 55vh;
+		margin: 10% 0;
+	}
+
+	.inputControl {
+		height: 100%;
+		margin-top: 0;
+		justify-content: space-around;
+	}
+
+	.inputControl button {
+		margin-top: 10%;
+		justify-self: flex-end;
+	}
+}
+
+@media (min-width: 1300px) {
+	.createPlace form {
+		max-width: 975px;
+		max-height: 600px;
+		padding: 0 3rem;
+	}
+
+	.inputControl {
+		padding: 5rem;
+	}
+
+	.control {
+		max-width: 400px;
+	}
+}

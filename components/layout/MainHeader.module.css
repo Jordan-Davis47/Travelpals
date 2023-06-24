@@ -1,0 +1,120 @@
+.header {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1rem 0 1rem 5%;
+	height: 5rem;
+	background-color: #202020;
+}
+
+.logo {
+	font-size: 2.5rem;
+	color: white;
+	font-family: "Fira", sans-serif;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #94fdfd;
+}
+
+.logo a {
+	text-decoration: none;
+	color: #94fdfd;
+}
+
+.navigation {
+	width: 60%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.navigation a {
+	text-decoration: none;
+	color: #74dacc;
+	font-size: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.navigation ul {
+	display: none;
+}
+
+.navigation .menuContainer {
+	width: 40px;
+	height: 40px;
+	/* background-color: blue; */
+	position: absolute;
+	right: 5%;
+	top: 3%;
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 5;
+}
+
+.navigation span {
+	display: block;
+	width: 30px;
+	height: 3px;
+	background-color: white;
+	color: white;
+	position: absolute;
+	transition: all 0.5s ease;
+}
+
+.navigation span:nth-of-type(1) {
+	top: 25%;
+}
+
+.navigation span:nth-of-type(2) {
+	top: 50%;
+}
+
+.navigation span:nth-of-type(3) {
+	top: 75%;
+}
+
+.menuOpen span:nth-of-type(1) {
+	transform: rotate(-405deg) translateY(14px);
+}
+
+.menuOpen span:nth-of-type(2) {
+	display: none;
+}
+
+.menuOpen span:nth-of-type(3) {
+	transform: rotate(405deg) translateY(-14px);
+}
+
+@media (min-width: 768px) {
+	.logo {
+		font-size: 2.5rem;
+	}
+
+	.navigation {
+		justify-content: space-evenly;
+	}
+
+	.navigation ul {
+		display: flex;
+		justify-content: flex-end;
+		gap: 5%;
+	}
+
+	.navigation ul li:last-child {
+		align-self: center;
+	}
+
+	.navigation a {
+		font-size: 1.4rem;
+		text-align: center;
+	}
+
+	.navigation .menuContainer {
+		display: none;
+	}
+}

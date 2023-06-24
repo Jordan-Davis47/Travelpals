@@ -15,7 +15,7 @@ const UserPlacesPage = (props) => {
 
 	return (
 		<div>
-			<PlaceList items={props.places} />
+			<PlaceList user={props.places[0].username} items={props.places} />
 		</div>
 	);
 };

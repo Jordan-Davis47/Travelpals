@@ -58,9 +58,6 @@ export const authOptions = {
 			if (user) {
 				console.log("JWT ACCOUNT CHECK");
 				token.user = user;
-				token.accessToken = user.data.accessToken;
-				token.accessTokenExpiry = user.data.accessTokenExpiry;
-				token.refreshToken = user.data.refreshToken;
 			}
 			return token;
 		},

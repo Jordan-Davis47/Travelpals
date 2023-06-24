@@ -56,7 +56,6 @@ export const authOptions = {
 		},
 		async jwt({ token, user, account }) {
 			if (user) {
-				console.log("JWT ACCOUNT CHECK");
 				token.user = user;
 			}
 			return token;

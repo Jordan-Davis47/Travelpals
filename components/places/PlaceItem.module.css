@@ -80,6 +80,11 @@
 	opacity: 0.6;
 }
 
+.likes {
+	display: flex;
+	font-weight: bold;
+}
+
 .username a {
 	text-decoration: none;
 }
@@ -113,11 +118,13 @@
 	}
 	.item {
 		flex-direction: row;
+		width: 80vw;
+		max-width: 600px;
 	}
 
 	.item img {
-		width: 40%;
-		height: 17rem;
+		width: 45%;
+		height: 21.5rem;
 	}
 
 	.tags,
@@ -136,9 +143,14 @@
 	}
 
 	.actions {
-		flex-direction: row;
+		flex-direction: column;
 		justify-content: space-between;
-		align-items: center;
-		padding: 2rem 1rem 0 0;
+		/* align-items: center; */
+		/* padding: 2rem 1rem 0 0; */
+	}
+
+	.infoContainer {
+		display: flex;
+		flex-direction: column;
 	}
 }

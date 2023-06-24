@@ -4,12 +4,18 @@ import PlaceList from "../../../components/places/PlaceList";
 
 const UserPlacesPage = (props) => {
 	console.log(props.places);
-	const username = props.places[0].username;
-	console.log(username);
+
+	if (!props.places.length) {
+		return (
+			<div className="center">
+				<p>No places to show...</p>
+			</div>
+		);
+	}
 
 	return (
 		<div>
-			<PlaceList user={username} items={props.places} />
+			<PlaceList items={props.places} />
 		</div>
 	);
 };
@@ -17,8 +23,10 @@ const UserPlacesPage = (props) => {
 export const getServerSideProps = async (context) => {
 	const { params } = context;
 	const userId = convertToObjectId(params.userId);
+	console.log(userId);
 
 	const userPlaces = await getUserPlaces(userId);
+	console.log(userPlaces);
 	userPlaces.map((place) => {
 		place._id = place._id.toString();
 		place.id = place._id;

@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { getAllPlaces, getPlaceById } from "../../../helpers/api-util";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 
 import Head from "next/head";
 import LoadingSpinner from "../../../components/UI/LoadingSpinner";
@@ -11,6 +12,7 @@ import Comments from "../../../components/input/Comments";
 import ContentButtons from "../../../components/place-detail/ContentButtons";
 
 const PlaceDetailPage = (props) => {
+	const { data: session, status } = useSession();
 	const router = useRouter();
 	const [showEdit, setShowEdit] = useState(false);
 	const place = props.selectedPlace;
@@ -26,6 +28,11 @@ const PlaceDetailPage = (props) => {
 			</div>
 		);
 	}
+
+	let ownsPlace;
+	if (session) {
+		ownsPlace = session.user.id === place.user;
+	}
 	return (
 		<Fragment>
 			<Head>
@@ -37,7 +44,7 @@ const PlaceDetailPage = (props) => {
 					<PlaceSummary title={place.name} />
 					<PlaceLogistics location={place.location} imageUrl={place.imageUrl} imageAlt={place.title} tags={place.tags} user={place.user} username={place.username} likes={place.likes} />
 					<PlaceContent>
-						<ContentButtons place={place} showEdit={showEditPlaceHandler} />
+						{ownsPlace && <ContentButtons place={place} showEdit={showEditPlaceHandler} />}
 
 						<p>{place.description}</p>
 					</PlaceContent>
@@ -59,7 +66,7 @@ export const getStaticPaths = async () => {
 
 	return {
 		paths: paths,
-		fallback: "blocking",
+		fallback: true,
 	};
 };
 
@@ -76,7 +83,7 @@ export const getStaticProps = async (context) => {
 		props: {
 			selectedPlace: place,
 		},
-		revalidate: 60,
+		revalidate: 10,
 	};
 };
 

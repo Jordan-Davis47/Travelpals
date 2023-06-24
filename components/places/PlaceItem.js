@@ -30,12 +30,16 @@ const PlaceItem = (props) => {
 					</div>
 				</div>
 				<div className={classes.actions}>
-					<p className={classes.username}>
-						<Link href={`/places/user/${user}`}>
+					<div className={classes.infoContainer}>
+						<p className={classes.likes}>
 							<span>Likes: {likes.length}</span>
-							<span>Author: {username}</span>
-						</Link>
-					</p>
+						</p>
+						<p className={classes.username}>
+							<Link href={`/places/user/${user}`}>
+								<span>Author: {username}</span>
+							</Link>
+						</p>
+					</div>
 					<Button link={exploreLink}>
 						<span>Explore Place</span>
 						<span className={classes.icon}>

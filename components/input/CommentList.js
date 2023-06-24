@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Fragment, useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import useNotification from "../../hooks/useNotification";
@@ -8,10 +8,15 @@ import DeleteIcon from "../icons/DeleteIcon";
 import classes from "./CommentList.module.css";
 
 const CommentList = (props) => {
+	if (!props.comments.length) {
+		return <p>No one has commented yet... be the first to comment!</p>;
+	}
 	return (
-		<ul className={classes.comments}>
-			{props.comments && props.comments.map((comment) => <Comment key={comment._id} id={comment._id} text={comment.text} placeOwner={props.placeOwner} user={comment.user} username={comment.username} refresh={props.refresh} />)}
-		</ul>
+		<Fragment>
+			<ul className={classes.comments}>
+				{props.comments && props.comments.map((comment) => <Comment key={comment._id} id={comment._id} text={comment.text} placeOwner={props.placeOwner} user={comment.user} username={comment.username} refresh={props.refresh} />)}
+			</ul>
+		</Fragment>
 	);
 };
 

@@ -40,14 +40,16 @@ const ContentButtons = (props) => {
 
 	return (
 		<Fragment>
-			<div className={classes.container}>
-				<Button onClick={editPlaceHandler} className={classes.btn}>
-					Edit
-				</Button>
-				<Button onClick={deletePlaceHandler} className={classes.btn}>
-					Delete
-				</Button>
-			</div>
+			{session && (
+				<div className={classes.container}>
+					<Button onClick={editPlaceHandler} className={classes.btn}>
+						Edit
+					</Button>
+					<Button onClick={deletePlaceHandler} className={classes.btn}>
+						Delete
+					</Button>
+				</div>
+			)}
 		</Fragment>
 	);
 };

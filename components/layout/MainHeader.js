@@ -22,12 +22,10 @@ const MainHeader = (props) => {
 
 	const menuIconClasses = showMenu ? `${classes.menuContainer} ${classes.menuOpen}` : classes.menuContainer;
 
-	console.log(props.menuOpen);
-
 	return (
 		<header className={classes.header}>
 			<div className={classes.logo}>
-				<Link href="/">TravelPal</Link>
+				<Link href="/">TravelPals</Link>
 			</div>
 			<nav className={classes.navigation}>
 				<ul>

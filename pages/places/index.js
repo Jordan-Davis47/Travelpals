@@ -16,13 +16,12 @@ const AllEventsPage = (props) => {
 	);
 };
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async (context) => {
 	const places = await getAllPlaces();
 
 	return {
 		props: {
 			places: places,
-			revalidate: 60,
 		},
 	};
 };
